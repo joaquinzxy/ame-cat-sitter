@@ -6,7 +6,6 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://joaquinzxy.github.io',
   base: 'ame-cat-sitter',
-  outDir: 'docs',
   trailingSlash: 'always',
   build: {
     assets: '_assets',
