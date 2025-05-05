@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --color-persian-pink-50: #fcf3fa;
+  --color-persian-pink-100: #f9eaf6;
+  --color-persian-pink-200: #f5d5ed;
+  --color-persian-pink-300: #eeb3de;
+  --color-persian-pink-400: #e27fc6;
+  --color-persian-pink-500: #d65eb0;
+  --color-persian-pink-600: #c33f94;
+  --color-persian-pink-700: #a82e79;
+  --color-persian-pink-800: #8b2963;
+  --color-persian-pink-900: #752655;
+  --color-persian-pink-950: #461130;
+  --main-pink: var(--color-persian-pink-400);
+}
+
+h1, h2, h3 {
+  font-family: "Cal Sans", sans-serif
+}
+
+h4, h5, h6, p {
+  font-family: "Lato", sans-serif
+}
+
+p {
+  font-size-adjust: 0.5;
+  line-height: calc(1ex / 0.32);
+}
+
+a {
+  transition: 0.3s all ease;
+}

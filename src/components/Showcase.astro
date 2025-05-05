@@ -1,0 +1,143 @@
+---
+---
+<div id="showcase" class="w-full py-12">
+  <div class="mx-auto">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Amor, compañía y mucha paciencia</h2>
+    <p class="text-gray-600 text-center mb-8">
+      Decenas de tutores confían en nuestros cuidados todos los meses. Su bienestar es nuestra prioridad absoluta.
+    </p>
+      <div class="mx-auto overflow-hidden">
+        <div class="slider-container py-4">
+          <div class="slider-track" id="slider-track">
+            <!-- Original slides -->
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 1">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 2">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 3">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 4">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 5">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 6">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 7">
+            </div>
+            
+            <!-- Duplicate slides for infinite effect -->
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 1">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 2">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 3">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 4">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 5">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 6">
+            </div>
+            <div class="slide">
+              <img src="https://framerusercontent.com/images/NrComKbYzPQXlLvG45IDEsGsZWw.jpeg" alt="Image 7">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+    
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sliderTrack = document.getElementById('slider-track');
+    
+    // This function will check if we need to duplicate more slides
+    // to ensure the animation continues smoothly
+    function checkSliderWidth() {
+      const trackWidth = sliderTrack?.offsetWidth;
+      const windowWidth = window.innerWidth;
+      
+      if (trackWidth && trackWidth < windowWidth * 3) {
+        // If the track is not at least 3x the window width,
+        // duplicate the slides again
+        const slides = document.querySelectorAll('.slide');
+        const slidesToAdd = Array.from(slides).slice(0, slides.length / 2);
+        
+        slidesToAdd.forEach(slide => {
+          const clone = slide.cloneNode(true);
+          sliderTrack?.appendChild(clone);
+        });
+      }
+    }
+    
+    // Check on load and resize
+    checkSliderWidth();
+    window.addEventListener('resize', checkSliderWidth);
+    
+    // Optional: Adjust animation speed based on the number of slides
+    function adjustAnimationSpeed() {
+      const slides = document.querySelectorAll('.slide');
+      const baseSpeed = 10; // Base speed in seconds
+      const speed = baseSpeed * (slides.length / 14); // Adjust based on ratio to original slide count
+      
+      if(sliderTrack){
+        sliderTrack.style.animationDuration = `${speed}s`;
+      }
+    }
+    
+    adjustAnimationSpeed();
+  });
+</script>
+
+<style>
+
+  .slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .slider-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll 30s linear infinite;
+  }
+  
+  .slide {
+    height: 500px;
+    margin: 0 8px;
+    flex-shrink: 0;
+  }
+  
+  .slide img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 1rem;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+</style>
+

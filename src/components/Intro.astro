@@ -1,0 +1,42 @@
+---
+const stats = [
+  {
+    title: "+20",
+    subtitle: "Michis felices",
+  },
+  {
+    title: "100%",
+    subtitle: "Reseñas positivas",
+  },
+  {
+    title: "+1234",
+    subtitle: "Visitas realizadas",
+  },
+  {
+    title: "+2",
+    subtitle: "Años de experiencia",
+  }
+]
+---
+<div id="intro" class="bg-white min-h-dvh py-16 px-26 text-center">
+<div class="container">
+  <h2 class="text-4xl font-semibold text-gray-800 mb-4">Hola! Soy Amelia Botana 💖</h2>
+  <p class="text-gray-600 text-lg mb-8">
+    Amamos los animales. Amamos los gatos. Por más de 4 años nos hemos dedicado a brindar amor, compañía y cuidados a los gatitos que se encuentran solos en los hogares cuando sus dueños viajan.
+  </p>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {
+      stats.map(stat => (
+        <div class="p-4">
+          <p class="text-5xl font-extrabold text-pink-300">{stat.title}<span class='block text-2xl font-medium text-gray-900'>{stat.subtitle}</span>
+          </p>
+        </div>
+      ))
+    }
+  </div>
+  <div class='mt-20'>
+    <video src="https://framerusercontent.com/assets/5IArhoq5PwcD6Ls8mR8sIBlwg4.mp4" loop="" preload="auto" muted="" playsinline="" style="cursor:auto;width:100%;height:350px;border-radius:18px;display:block;object-fit:cover;background-color:rgba(0, 0, 0, 0);object-position:50% 50%" autoplay=""></video>
+  </div>
+</div>
+</div>
+
