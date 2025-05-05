@@ -21,6 +21,11 @@ html, body {
   height: 100%;
 }
 
+/* make scroll smooth */
+html {
+  scroll-behavior: smooth;
+}
+
 h1, h2, h3 {
   font-family: "Cal Sans", sans-serif
 }
@@ -44,4 +49,9 @@ header, #mobile-menu {
   backdrop-filter: blur( 9.5px );
   -webkit-backdrop-filter: blur( 9.5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+/* Add scroll-margin-top to prevent header overlap */
+section {
+  scroll-margin-top: 70px; /* Adjust this value to match your header height */
 }
