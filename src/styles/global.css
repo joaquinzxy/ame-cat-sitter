@@ -47,11 +47,14 @@ header, #mobile-menu {
   background: rgba( 255, 255, 255, 0.25 );
   box-shadow: 0 8px 32px 0 rgba(151, 151, 151, 0.37);
   backdrop-filter: blur( 9.5px );
+  /* browser compatibility */
   -webkit-backdrop-filter: blur( 9.5px );
+  -moz-backdrop-filter: blur( 9.5px );
+  -o-backdrop-filter: blur( 9.5px );
+  -ms-backdrop-filter: blur( 9.5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-/* Add scroll-margin-top to prevent header overlap */
 section {
-  scroll-margin-top: 70px; /* Adjust this value to match your header height */
+  scroll-margin-top: 80px;
 }

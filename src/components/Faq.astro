@@ -132,8 +132,8 @@ const faqData = [
   const toggleButtons = document.querySelectorAll('[id^="btn-faq-"]');
   toggleButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const id = button.id.split('-')[2]; // Extract the ID from the button
-      toggleFaq(id); // Call the toggle function with the extracted ID
+      const id = button.id.split('-')[2];
+      toggleFaq(id);
     });
   });
 </script>

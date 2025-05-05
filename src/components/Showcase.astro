@@ -65,15 +65,11 @@
   document.addEventListener('DOMContentLoaded', () => {
     const sliderTrack = document.getElementById('slider-track');
     
-    // This function will check if we need to duplicate more slides
-    // to ensure the animation continues smoothly
     function checkSliderWidth() {
       const trackWidth = sliderTrack?.offsetWidth;
       const windowWidth = window.innerWidth;
       
       if (trackWidth && trackWidth < windowWidth * 3) {
-        // If the track is not at least 3x the window width,
-        // duplicate the slides again
         const slides = document.querySelectorAll('.slide');
         const slidesToAdd = Array.from(slides).slice(0, slides.length / 2);
         
@@ -83,16 +79,14 @@
         });
       }
     }
-    
-    // Check on load and resize
+
     checkSliderWidth();
     window.addEventListener('resize', checkSliderWidth);
-    
-    // Optional: Adjust animation speed based on the number of slides
+
     function adjustAnimationSpeed() {
       const slides = document.querySelectorAll('.slide');
-      const baseSpeed = 10; // Base speed in seconds
-      const speed = baseSpeed * (slides.length / 14); // Adjust based on ratio to original slide count
+      const baseSpeed = 10;
+      const speed = baseSpeed * (slides.length / 14);
       
       if(sliderTrack){
         sliderTrack.style.animationDuration = `${speed}s`;
