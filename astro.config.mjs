@@ -7,9 +7,6 @@ export default defineConfig({
   site: 'https://joaquinzxy.github.io',
   base: 'ame-cat-sitter',
   trailingSlash: 'always',
-  build: {
-    assets: '_assets',
-  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
