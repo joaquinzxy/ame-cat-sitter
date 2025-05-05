@@ -4,9 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // Assuming your repo name is "joaquinzxy.github.io" with content in the root
-  // If your repo is "your-repo-name", use "/your-repo-name"
-  base: '/',
+  site: 'https://joaquinzxy.github.io',
+  base: 'ame-cat-sitter',
   outDir: 'docs',
   trailingSlash: 'always',
   build: {
